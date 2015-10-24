@@ -13,8 +13,14 @@
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.cjavaperu.spring" />
 	
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="order" value="1"/>
+        <property name="location" value="classpath:spring/views.xml"/>
+    </bean>
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2"/>
 		<property name="prefix" value="/frontend/" />
 		<property name="suffix" value=".jsp" />
 	</bean>

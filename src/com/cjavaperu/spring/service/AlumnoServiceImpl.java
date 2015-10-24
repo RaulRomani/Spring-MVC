@@ -14,7 +14,7 @@ import com.cjavaperu.spring.daos.AlumnoDao;;
 public class AlumnoServiceImpl implements AlumnoService {
 	
 	@Autowired
-	private AlumnoDao AlumnoDao;
+	private AlumnoDao AlumnoDao; // Va a buscar al DAO que tenga el estereotipo Repository
 
 	@Override
 	public void create(Alumno Alumno) {

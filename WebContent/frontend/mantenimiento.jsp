@@ -6,23 +6,23 @@
 <title>Mantenimiento de Alumnos</title>
 </head>
 <body>
-	<h1>${bienvenido}</h1>
+	<h1>Mantenimiento de Alumnos</h1>
 	<h3>${fecha}</h3>
 	<span>${mensaje}</span>
 	
 	<form action="${pageContext.request.contextPath}/mantenimiento/registrarActualizar" method="post" >
 		
-		<input type="hidden" name="id" value="${id}" />
+		<input type="hidden" name="id" value="${alumno.id}" />
 		<table>
 			<tbody>
 				<tr>
 					<td>Nombre:</td>
-					<td><input type="text" name="nombre" value="${Alumno.nombre}" /></td>
+					<td><input type="text" name="nombre" value="${alumno.nombre}" /> <span style="color: red;" >${errornombre}</span></td>
 				</tr>
 				
 				<tr>
 					<td>Promedio</td>
-					<td><input type="text" name="promedio" value="${Alumno.promedio}" /></td>
+					<td><input type="text" name="promedio" value="${alumno.promedio}" /> <span style="color: red;" >${errorpromedio}</span></td>
 				</tr>
 				<tr>
 					<td colspan="2" ><input type="submit" value="Guardar" /></td>
@@ -30,6 +30,10 @@
 			</tbody>
 		</table>
 	</form>
+	
+	<a href="${pageContext.request.contextPath}/mantenimiento/descargar?formato=excel">Descargar Excel</a>
+	<a href="${pageContext.request.contextPath}/mantenimiento/descargar?formato=pdf">Descargar PDF</a>
+	
 	
 		<table border="1px" cellpadding="5px" cellspacing="0">
 		<thead>
@@ -41,11 +45,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="Alumno" items="${Alumnos}" varStatus="id">
+			<c:forEach var="alumno" items="${alumnos}" varStatus="id">
 				<tr>
-					<td><c:out value="${Alumno.nombre}"></c:out></td>
-					<td><c:out value="${Alumno.estado}"></c:out></td>
-					<td><c:out value="${Alumno.promedio}"></c:out></td>
+					<td><c:out value="${alumno.nombre}"></c:out></td>
+					<td><c:out value="${alumno.estado}"></c:out></td>
+					<td><c:out value="${alumno.promedio}"></c:out></td>
 					<td><a
 						href="${pageContext.request.contextPath}/mantenimiento/cargar?id=${id.count}">Actualizar</a>/
 						<a
