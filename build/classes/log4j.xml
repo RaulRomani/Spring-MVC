@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="consola" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="archivo" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/LOGS/SpringMVC.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.cjavaperu.mvc.controller">
+		<level value="INFO" />
+		<appender-ref ref="archivo" />
+	</logger>
+
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="consola" />
+	</root>
+
+</log4j:configuration>
