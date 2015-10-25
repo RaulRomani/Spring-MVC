@@ -24,5 +24,26 @@
 		<property name="prefix" value="/frontend/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+<!-- 	Para manejar el preHandler y postHandler de un requestMapping -->
+	<mvc:interceptors>		
+		<mvc:interceptor>
+			<mvc:mapping path="/mantenimiento/descargar" />
+			<bean class="com.cjavaperu.spring.handler.HandlerInterceptor" />
+		</mvc:interceptor>	
+	</mvc:interceptors>
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView">
+			<value>error/generic_error</value>
+		</property>
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.cjavaperu.spring.exception.CustomException">error/custom_error</prop>
+				<prop key="java.lang.Exception">error/generic_error</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>

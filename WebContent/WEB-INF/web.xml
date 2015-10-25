@@ -25,4 +25,9 @@
   <welcome-file-list>
   	<welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+<!--   In order to handle a 404 error -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/frontend/error/404.jsp</location>
+  </error-page>
 </web-app>
