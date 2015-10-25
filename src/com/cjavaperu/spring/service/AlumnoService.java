@@ -14,7 +14,7 @@ public interface AlumnoService {
 	
 	Alumno find(Integer id);
 	
-	Alumno delete(Integer id);
+	int delete(Integer id);
 
 	List<Alumno> findAll();
 

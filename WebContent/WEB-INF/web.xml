@@ -3,7 +3,7 @@
   <display-name>s11_practica02</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/DispatcherServlet-servlet.xml</param-value>
+    <param-value>classpath:spring/applicacionContext.xml</param-value>
   </context-param>
   <servlet>
     <servlet-name>DispatcherServlet</servlet-name>

@@ -51,10 +51,15 @@
 					<td><c:out value="${alumno.estado}"></c:out></td>
 					<td><c:out value="${alumno.promedio}"></c:out></td>
 					<td><a
-						href="${pageContext.request.contextPath}/mantenimiento/cargar?id=${id.count}">Actualizar</a>/
+						href="${pageContext.request.contextPath}/mantenimiento/cargar?id=${alumno.id}">Actualizar</a>/
 						<a
-						href="${pageContext.request.contextPath}/mantenimiento/eliminar?id=${id.count}">Eliminar</a>
+						href="${pageContext.request.contextPath}/mantenimiento/eliminar?id=${alumno.id}">Eliminar</a>
 					</td>
+<!-- 					<td><a -->
+<%-- 						href="${pageContext.request.contextPath}/mantenimiento/cargar?id=${id.count}">Actualizar</a>/ --%>
+<!-- 						<a -->
+<%-- 						href="${pageContext.request.contextPath}/mantenimiento/eliminar?id=${id.count}">Eliminar</a> --%>
+<!-- 					</td> -->
 				</tr>
 			</c:forEach>
 		</tbody>

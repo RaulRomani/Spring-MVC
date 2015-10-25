@@ -32,7 +32,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 	}
 
 	@Override
-	public Alumno delete(Integer id) {
+	public int delete(Integer id) {
 		return AlumnoDao.delete(id);
 	}
 
